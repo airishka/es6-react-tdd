@@ -12,7 +12,7 @@
     "postbuild": "uglifyjs dist/index.max.js -m -c > dist/index.js",
     "build:watch": "chokidar 'src' -c 'npm run build'",
     "build:js": "NODE_ENV=production browserify src/index.js --insert-global-vars global -s $npm_package_name > dist/index.max.js --transform=babelify",
-    "build:html": "cp src/index.html dist"
+    "build:html": "cp -R vendor/* dist; cp src/index.html dist"
   },
   "repository": {
     "type": "git",

@@ -1,4 +1,4 @@
-{
+export const katas = {
   "groups": {
     "Template strings": {
       "items": [
@@ -743,4 +743,4 @@
       ]
     }
   }
-}
+};
