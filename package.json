@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/airishka/es6-react-tdd/issues"
   },
-  "homepage": "https://github.com/airishka/es6-react-tdd"
+  "homepage": "https://github.com/airishka/es6-react-tdd",
+  "devDependencies": {
+    "mocha": "^2.2.5"
+  }
 }
