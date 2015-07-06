@@ -4,7 +4,7 @@
   "description": "The ultimate ES6 in use with React",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --reporter dot --recursive -r setup-referee-sinon/globals test/unit"
+    "test": "mocha --compilers js:babel-core/register --reporter dot --recursive -r setup-referee-sinon/globals test/unit"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/airishka/es6-react-tdd",
   "devDependencies": {
+    "babel-core": "^5.6.15",
     "mocha": "^2.2.5",
     "referee": "^1.1.1",
     "referee-sinon": "^1.0.2",

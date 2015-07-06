@@ -1,5 +1,18 @@
-describe('initial test setup', function(){
-  it('should works', function(){
-    expect(1).toBe(1);
+'use strict';
+
+import {createKataJson} from '../mock/kata-mock.js';
+
+describe('katas json', function() {
+  it('has a valid structure', function(){
+    var katasJson = {
+      groups: {
+        "Template strings": {
+          items: []
+        }
+      }
+    };
+    var validKatasJson = createKataJson('valid');
+    expect(katasJson).toEqual(validKatasJson);
   });
+  
 });
