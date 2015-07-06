@@ -1,5 +1,5 @@
 import assert from 'assert';
-import { loadRemoteFile }  from '../../src/jsonLoader.js';
+import { loadRemoteFile }  from '../../src/JSONLoader.js';
 
 describe('Environment test', function() {
   it('It should not fail', function() {
