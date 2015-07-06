@@ -1,10 +1,10 @@
 {
   "name": "es6-react-tdd",
   "version": "1.0.0",
-  "description": "The ultimate ES6 with React workshop",
+  "description": "The ultimate ES6 in use with React",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --reporter dot --recursive -r setup-referee-sinon/globals test/unit"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,11 @@
   },
   "homepage": "https://github.com/airishka/es6-react-tdd",
   "devDependencies": {
-    "mocha": "^2.2.5"
+    "mocha": "^2.2.5",
+    "referee": "^1.1.1",
+    "referee-sinon": "^1.0.2",
+    "setup-referee-sinon": "^0.3.0",
+    "sinon": "^1.15.4",
+    "sinon-as-promised": "^4.0.0"
   }
 }

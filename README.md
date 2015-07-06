@@ -1,1 +1,1 @@
-# es6-react-tdd
+# The ECMAScript 6 in use with react.js
