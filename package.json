@@ -3,8 +3,17 @@
   "version": "1.0.0",
   "description": "The ultimate ES6 in use with React",
   "main": "index.js",
+  "browser": {
+    "react": "./src/shim/react.js"
+  },
   "scripts": {
-    "test": "mocha --compilers js:babel-core/register --reporter dot --recursive -r setup-referee-sinon/globals test/unit"
+    "test": "mocha --compilers js:babel-core/register --reporter dot --recursive -r setup-referee-sinon/globals test/unit",
+    "build": "mkdir -p dist; npm run build:html; npm run build:js",
+    "postbuild": "uglifyjs dist/index.max.js -m -c > dist/index.js",
+    "build:watch": "chokidar 'src' -c 'npm run build'",
+    "build:js": "NODE_ENV=production browserify src/index.js --insert-global-vars global -s $npm_package_name > dist/index.max.js --transform=babelify",
+    "build:html": "cp src/index.html dist"
+
   },
   "repository": {
     "type": "git",
@@ -18,11 +27,18 @@
   "homepage": "https://github.com/airishka/es6-react-tdd",
   "devDependencies": {
     "babel-core": "^5.6.15",
+    "chokidar": "^1.0.3",
     "mocha": "^2.2.5",
     "referee": "^1.1.1",
     "referee-sinon": "^1.0.2",
     "setup-referee-sinon": "^0.3.0",
     "sinon": "^1.15.4",
-    "sinon-as-promised": "^4.0.0"
+    "sinon-as-promised": "^4.0.0",
+    "uglifyjs": "^2.4.10"
+  },
+  "dependencies": {
+    "babelify": "^6.1.2",
+    "browserify": "^10.2.4",
+    "react": "^0.13.3"
   }
 }
