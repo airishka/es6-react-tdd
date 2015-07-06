@@ -10,5 +10,7 @@ class Page extends React.Component {
   }
 }
 
-React.render(<Page />, document.getElementById('app'));
-
+import JSONLoader from './jsonLoader.js';
+JSONLoader.loadRemoteFile(url, (err, {groups}) => {
+  React.render(<Page groups={groups} />, document.getElementById('app'));
+});
