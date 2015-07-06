@@ -13,7 +13,6 @@
     "build:watch": "chokidar 'src' -c 'npm run build'",
     "build:js": "NODE_ENV=production browserify src/index.js --insert-global-vars global -s $npm_package_name > dist/index.max.js --transform=babelify",
     "build:html": "cp src/index.html dist"
-
   },
   "repository": {
     "type": "git",
@@ -39,6 +38,7 @@
   "dependencies": {
     "babelify": "^6.1.2",
     "browserify": "^10.2.4",
+    "chokidar-cli": "^0.3.0",
     "react": "^0.13.3"
   }
 }
